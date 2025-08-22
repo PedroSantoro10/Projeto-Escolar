@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12 col-md-8">
+        <h2 class="dashboard-title">Bem-vindo ao <span style="color:#ff8000;">PROJETO SEGAR</span></h2>
+        <p class="text-white mb-2">Sistema de Gerenciamento Educacional da ONG</p>
+        <div class="alert alert-info shadow-sm mb-0" role="alert">
+            <strong>Dica:</strong> Use o menu lateral para acessar rapidamente as áreas do sistema. Professores e alunos podem ver suas agendas, conteúdos e tarefas personalizadas.
+        </div>
+    </div>
+    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+        <img src="https://img.icons8.com/color/96/000000/school-building.png" alt="Escola" class="img-fluid" style="max-height:90px;">
+    </div>
+</div>
+<div class="row g-4 mb-4">
+    <div class="col-6 col-md-3">
+        <div class="card dashboard-card text-center p-3 border-0 shadow-sm" style="background: linear-gradient(135deg,#ff8000 0%,#ffd180 100%); color:#fff;">
+            <div class="card-body">
+                <div style="font-size:2.5rem;">👩‍🏫</div>
+                <h2 class="mb-0">0</h2>
+                <p class="mb-0">Professores</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card dashboard-card text-center p-3 border-0 shadow-sm" style="background: linear-gradient(135deg,#1e3c72 0%,#2a5298 100%); color:#fff;">
+            <div class="card-body">
+                <div style="font-size:2.5rem;">🎓</div>
+                <h2 class="mb-0">0</h2>
+                <p class="mb-0">Alunos</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card dashboard-card text-center p-3 border-0 shadow-sm" style="background: linear-gradient(135deg,#43cea2 0%,#185a9d 100%); color:#fff;">
+            <div class="card-body">
+                <div style="font-size:2.5rem;">📅</div>
+                <h2 class="mb-0">5</h2>
+                <p class="mb-0">Atividades Hoje</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card dashboard-card text-center p-3 border-0 shadow-sm" style="background: linear-gradient(135deg,#ff512f 0%,#dd2476 100%); color:#fff;">
+            <div class="card-body">
+                <div style="font-size:2.5rem;">📚</div>
+                <h2 class="mb-0">12</h2>
+                <p class="mb-0">Conteúdos Ativos</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row g-4">
+    <div class="col-12 col-lg-6">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <h5 class="card-title mb-3" style="color:#1e3c72;">Avisos Importantes</h5>
+                <ul class="list-unstyled mb-0">
+                    <li><span style="color:#ff8000;">&#9888;</span> Reunião pedagógica na próxima sexta-feira às 16h.</li>
+                    <li><span style="color:#43cea2;">&#128197;</span> Matrículas abertas para novos alunos.</li>
+                    <li><span style="color:#ff512f;">&#128221;</span> Professores: atualizem seus conteúdos programáticos.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-lg-6">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+                <h5 class="card-title mb-3" style="color:#1e3c72;">Acesso Rápido</h5>
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="/professores" class="btn btn-outline-primary flex-fill">Professores</a>
+                    <a href="/alunos" class="btn btn-outline-primary flex-fill">Alunos</a>
+                    <a href="/agenda" class="btn btn-outline-primary flex-fill">Agenda</a>
+                    <a href="/conteudo" class="btn btn-outline-primary flex-fill">Conteúdo</a>
+                    <a href="/jornal" class="btn btn-outline-primary flex-fill">Jornal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

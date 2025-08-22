@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12 col-md-8">
+        <h2 class="dashboard-title">Professores <span style="font-size:1.5rem;">👩‍🏫</span></h2>
+        <div class="alert alert-info shadow-sm mb-0" role="alert">
+            <strong>Dica:</strong> Adicione conteúdos programáticos para cada professor e acompanhe suas disciplinas facilmente.
+        </div>
+    </div>
+    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+        <img src="https://img.icons8.com/color/96/teacher.png" alt="Professores" class="img-fluid" style="max-height:80px;">
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-bordered prof-table shadow-sm" style="background:#fff;">
+        <thead>
+            <tr>
+                <th><span style="font-size:1.2em;">👤</span> Nome</th>
+                <th><span style="font-size:1.2em;">🏷️</span> Cargo</th>
+                <th><span style="font-size:1.2em;">📚</span> Conteúdo Programático</th>
+                <th><span style="font-size:1.2em;">➕</span> Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for prof in professores %}
+            <tr>
+                <td><strong>{{ prof.nome }}</strong></td>
+                <td>{{ prof.cargo }}</td>
+                <td>
+                    {% if prof.conteudo %}
+                        <ul class="mb-0">
+                        {% for item in prof.conteudo %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <span class="text-muted">Nenhum conteúdo adicionado</span>
+                    {% endif %}
+                </td>
+                <td>
+                    <form method="post" action="/professores/adicionar-conteudo" class="d-flex gap-2">
+                        <input type="hidden" name="professor" value="{{ prof.nome }}">
+                        <input type="text" name="conteudo" class="form-control form-control-sm" placeholder="Novo conteúdo" required>
+                        <button type="submit" class="btn btn-primary btn-sm">Adicionar</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

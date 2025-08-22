@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12 col-md-8">
+        <h2 class="dashboard-title">Cadastro de Aluno <span style="font-size:1.5rem;">🎓</span></h2>
+        <div class="alert alert-info shadow-sm mb-0" role="alert">
+            Preencha todos os campos para cadastrar um novo aluno no sistema.
+        </div>
+    </div>
+    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+        <img src="https://img.icons8.com/color/96/student-male--v1.png" alt="Aluno" class="img-fluid" style="max-height:80px;">
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card border-0 shadow-sm p-4">
+            <form method="post" action="/alunos/cadastrar" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="foto" class="form-label">Foto do Aluno</label>
+                    <input type="file" class="form-control" id="foto" name="foto" accept="image/*" required>
+                </div>
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome Completo</label>
+                    <input type="text" class="form-control" id="nome" name="nome" required>
+                </div>
+                <div class="mb-3">
+                    <label for="rg" class="form-label">RG (arquivo)</label>
+                    <input type="file" class="form-control" id="rg" name="rg" accept="application/pdf,image/*" required>
+                </div>
+                <div class="mb-3">
+                    <label for="comprovante" class="form-label">Comprovante de Residência</label>
+                    <input type="file" class="form-control" id="comprovante" name="comprovante" accept="application/pdf,image/*" required>
+                </div>
+                <div class="mb-3">
+                    <label for="idade" class="form-label">Idade</label>
+                    <input type="number" class="form-control" id="idade" name="idade" min="1" required>
+                </div>
+                <div class="mb-3">
+                    <label for="ano" class="form-label">Ano que está cursando</label>
+                    <select class="form-select" id="ano" name="ano" required>
+                        <option value="">Selecione...</option>
+                        <option>1º Ano</option>
+                        <option>2º Ano</option>
+                        <option>3º Ano</option>
+                        <option>4º Ano</option>
+                        <option>5º Ano</option>
+                        <option>6º Ano</option>
+                        <option>7º Ano</option>
+                        <option>8º Ano</option>
+                        <option>9º Ano</option>
+                        <option>1º Ano Ensino Médio</option>
+                        <option>2º Ano Ensino Médio</option>
+                        <option>3º Ano Ensino Médio</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Cadastrar Aluno</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

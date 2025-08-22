@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card shadow p-4 mt-5">
+            <h3 class="mb-4 text-center">Login do Professor</h3>
+            <form method="post" action="/login-professor">
+                <div class="mb-3">
+                    <label for="login" class="form-label">Login</label>
+                    <input type="text" class="form-control" id="login" name="login" required>
+                </div>
+                <div class="mb-3">
+                    <label for="senha" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="senha" name="senha" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Entrar</button>
+            </form>
+            <div class="text-center mt-3">
+                <span>Não tem conta?</span>
+                <a href="/cadastro-professor" class="link-primary">Cadastre-se</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

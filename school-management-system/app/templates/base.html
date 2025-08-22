@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJETO SEGAR - Sistema Escolar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #e9ecef;
+            background: linear-gradient(120deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+        }
+        .sidebar { min-width: 220px; background: #22223b; color: #fff; min-height: 100vh; }
+        .sidebar a { color: #fff; text-decoration: none; display: block; padding: 12px 20px; }
+        .sidebar a.active, .sidebar a:hover { background: #4a4e69; }
+        .dashboard-card { border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .dashboard-title { color: #fff; margin-bottom: 24px; }
+
+        /* Professores Table Custom Style */
+        .prof-table thead th {
+            background: linear-gradient(90deg, #b34700 0%, #ff8000 100%);
+            color: #fff;
+            font-size: 1.1rem;
+            border: none;
+        }
+        .prof-table tbody tr:nth-child(odd) {
+            background: #e3ecfa;
+        }
+        .prof-table tbody tr:nth-child(even) {
+            background: #f7faff;
+        }
+        .prof-table td, .prof-table th {
+            vertical-align: middle;
+        }
+        .prof-table ul {
+            margin-bottom: 0;
+        }
+        .prof-table .btn-primary {
+            background: linear-gradient(90deg, #ff8000 0%, #b34700 100%);
+            border: none;
+        }
+        .prof-table .btn-primary:hover {
+            background: #b34700;
+        }
+
+        /* Agenda Table Modern Style */
+        .agenda-table {
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 6px 32px rgba(30,60,114,0.13);
+            background: #fff;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 100%;
+        }
+        .agenda-table thead th {
+            background: linear-gradient(90deg, #ff8000 0%, #b34700 100%);
+            color: #fff;
+            font-size: 1.2rem;
+            border: none;
+            letter-spacing: 1px;
+            padding: 18px 0;
+        }
+        .agenda-table .avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 10px;
+            box-shadow: 0 2px 8px rgba(30,60,114,0.10);
+        }
+        .agenda-table .badge-day {
+            background: #ff9800;
+            color: #fff;
+            border-radius: 12px;
+            padding: 3px 12px;
+            margin: 2px 2px 2px 0;
+            font-size: 1em;
+            font-weight: 500;
+            box-shadow: 0 1px 4px rgba(255,152,0,0.10);
+        }
+        .agenda-table .icon {
+            color: #ff9800;
+            font-size: 1em;
+            margin-right: 2px;
+            vertical-align: middle;
+        }
+        .agenda-table strong {
+            color: #1e3c72;
+            font-size: 1.08em;
+        }
+        @media (max-width: 800px) {
+            .agenda-table, .agenda-table thead, .agenda-table tbody, .agenda-table th, .agenda-table td, .agenda-table tr {
+                display: block;
+            }
+            .agenda-table thead tr {
+                display: none;
+            }
+            .agenda-table td {
+                border: none;
+                position: relative;
+                padding-left: 50%;
+                min-height: 48px;
+            }
+            .agenda-table td:before {
+                position: absolute;
+                top: 12px;
+                left: 16px;
+                width: 45%;
+                white-space: nowrap;
+                font-weight: bold;
+                color: #1e3c72;
+            }
+            .agenda-table td:nth-child(1):before { content: 'Professor'; }
+            .agenda-table td:nth-child(2):before { content: 'Dias de Aula'; }
+            .agenda-table td:nth-child(3):before { content: 'Horários'; }
+        }
+    </style>
+</head>
+<body>
+<div class="d-flex">
+    <nav class="sidebar p-3">
+        <h4 class="mb-4">PROJETO SEGAR</h4>
+        <a href="/" class="active">Início</a>
+        <a href="/professores">Professores</a>
+        <a href="/alunos">Alunos</a>
+        <a href="/agenda">Agenda</a>
+        <a href="/conteudo">Conteúdo Programático</a>
+        <a href="/jornal">Jornal</a>
+        <a href="/lista-alunos">Lista de Alunos</a>
+        <a href="/login-professor">Login Professor</a>
+    </nav>
+    <main class="flex-fill p-4">
+        {% block content %}{% endblock %}
+    </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow p-4 mt-5">
+            <h3 class="mb-4 text-center">Cadastro de Professor</h3>
+            <form method="post" action="/cadastro-professor" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome Completo</label>
+                    <input type="text" class="form-control" id="nome" name="nome" required>
+                </div>
+                <div class="mb-3">
+                    <label for="identidade" class="form-label">Identidade</label>
+                    <input type="text" class="form-control" id="identidade" name="identidade" required>
+                </div>
+                <div class="mb-3">
+                    <label for="foto" class="form-label">Foto</label>
+                    <input type="file" class="form-control" id="foto" name="foto" accept="image/*" required>
+                </div>
+                <div class="mb-3">
+                    <label for="login" class="form-label">Login</label>
+                    <input type="text" class="form-control" id="login" name="login" required>
+                </div>
+                <div class="mb-3">
+                    <label for="senha" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="senha" name="senha" required>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

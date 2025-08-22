@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12 col-md-8">
+        <h2 class="dashboard-title">Agenda de Aulas <span style="font-size:1.5rem;">📅</span></h2>
+        <div class="alert alert-info shadow-sm mb-0" role="alert">
+            <strong>Dica:</strong> Veja rapidamente os horários e dias de aula de cada professor. Use o menu para acessar outras áreas.
+        </div>
+    </div>
+    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+        <img src="https://img.icons8.com/color/96/calendar--v1.png" alt="Agenda" class="img-fluid" style="max-height:80px;">
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="agenda-table shadow-sm" style="background:#fff;">
+        <thead>
+            <tr>
+                <th><span style="font-size:1.2em;">👤</span> Professor</th>
+                <th><span style="font-size:1.2em;">📅</span> Dias de Aula</th>
+                <th><span style="font-size:1.2em;">⏰</span> Horários</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="avatar">MM</span><strong>Max Moura</strong></td>
+                <td>
+                    <span class="icon">📅</span>
+                    <span class="badge-day">Segunda</span>
+                    <span class="badge-day">Terça</span>
+                    <span class="badge-day">Quarta</span>
+                </td>
+                <td><span class="icon">⏰</span>08:00 às 11:00<br><span class="icon">⏰</span>14:00 às 17:00</td>
+            </tr>
+            <tr>
+                <td><span class="avatar">AB</span><strong>Ana Maria Bragança</strong></td>
+                <td>
+                    <span class="icon">📅</span>
+                    <span class="badge-day">Segunda</span>
+                    <span class="badge-day">Terça</span>
+                    <span class="badge-day">Quarta</span>
+                    <span class="badge-day">Quinta</span>
+                    <span class="badge-day">Sexta</span>
+                </td>
+                <td><span class="icon">⏰</span>08:00 às 11:00<br><span class="icon">⏰</span>14:00 às 17:00</td>
+            </tr>
+            <tr>
+                <td><span class="avatar">RP</span><strong>Roberta Pereira</strong></td>
+                <td>
+                    <span class="icon">📅</span>
+                    <span class="badge-day">Segunda</span>
+                    <span class="badge-day">Terça</span>
+                    <span class="badge-day">Quarta</span>
+                    <span class="badge-day">Quinta</span>
+                    <span class="badge-day">Sexta</span>
+                </td>
+                <td><span class="icon">⏰</span>08:00 às 11:00<br><span class="icon">⏰</span>14:00 às 17:00</td>
+            </tr>
+            <tr>
+                <td><span class="avatar">KC</span><strong>Keison Costa</strong></td>
+                <td>
+                    <span class="icon">📅</span>
+                    <span class="badge-day">Segunda</span>
+                    <span class="badge-day">Terça</span>
+                    <span class="badge-day">Quarta</span>
+                    <span class="badge-day">Quinta</span>
+                    <span class="badge-day">Sexta</span>
+                </td>
+                <td><span class="icon">⏰</span>08:00 às 11:00<br><span class="icon">⏰</span>14:00 às 17:00</td>
+            </tr>
+            <tr>
+                <td><span class="avatar">TR</span><strong>Thaynan Rezende</strong></td>
+                <td>
+                    <span class="icon">📅</span>
+                    <span class="badge-day">Sexta</span>
+                </td>
+                <td><span class="icon">⏰</span>08:00 às 11:00<br><span class="icon">⏰</span>14:00 às 17:00</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
